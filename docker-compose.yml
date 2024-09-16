@@ -9,20 +9,13 @@ services:
     restart: unless-stopped
     networks:
       - dev
+    ports:
+      - '9080:80'
+    depends_on:
+      - mbtileserver
   mbtileserver:
     container_name: mbtileserver
     image: alexmass/bokm-mbtileserver:latest
     restart: unless-stopped
-    networks:
-      - dev
-  nginx:
-    container_name: nginx
-    image: alexmass/bokm-nginx:latest
-    restart: always
-    ports:
-      - '9080:80'
-    depends_on:
-      - viewer
-      - mbtileserver
     networks:
       - dev

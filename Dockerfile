@@ -1,12 +1,5 @@
-FROM node:lts-alpine
+FROM nginx:alpine
+COPY ./nginx.conf  /etc/nginx/conf.d/default.conf
 
-RUN npm install -g http-server
-
-# make the 'app' folder the current working directory
-WORKDIR /app
-
-COPY ./dist .
-
-
-EXPOSE 8080
-CMD [ "http-server", "." ]
+COPY ./dist /var/www
+EXPOSE 80
