@@ -21,8 +21,9 @@ On Mac, you eventually need this one to be able to xbuild
     bokm_version=0.1
 
 #### The viewer
-    npm run build && docker build --platform linux/amd64,linux/arm64  -t alexmass/bokm-viewer:$bokm_version -t alexmass/bokm-viewer:lastest .
-    docker push alexmass/bokm-viewer:$bokm_version
+    npm run build && \
+    docker build --platform linux/amd64,linux/arm64  -t alexmass/bokm-viewer:$bokm_version -t alexmass/bokm-viewer:latest . && \
+    docker push alexmass/bokm-viewer:$bokm_version && \
     docker push alexmass/bokm-viewer:latest
 
 ### Tiles server

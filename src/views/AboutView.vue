@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>Bay of Kiladha orthophoto mapping</h1>
+    <h1>Bay of Kiladha ortho-photo mapping</h1>
   </div>
 </template>
 
